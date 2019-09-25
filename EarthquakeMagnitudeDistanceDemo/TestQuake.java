@@ -4,7 +4,8 @@ public class TestQuake {
     //cliente.createCSV();
     //cliente.bigQuakes();
     //cliente.closeToMe();
-    //cliente.quakesOfPhrase();
-    cliente.findCloseQuakes();
+    cliente.quakesOfPhrase();
+    //cliente.findCloseQuakes();
+    //cliente.quakesOfDepth();
   }
 }

@@ -79,11 +79,13 @@ public class EarthQuakeClient {
     public void quakesOfPhrase() {
         EarthQuakeParser parser = new EarthQuakeParser();
         //String source = "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.atom";
-        //String source = "data/nov20quakedata.atom";
-        String source = "data/nov20quakedatasmall.atom";
+        String source = "data/nov20quakedata.atom";
+        //String source = "data/nov20quakedatasmall.atom";
         ArrayList<QuakeEntry> list = parser.read(source);
         System.out.println("read data for " + list.size() + " quakes");
-        ArrayList<QuakeEntry> listByPhrase = filterByPhrase(list, "start", "Exp");
+        //ArrayList<QuakeEntry> listByPhrase = filterByPhrase(list, "start", "Explosion");
+        //ArrayList<QuakeEntry> listByPhrase = filterByPhrase(list, "end", "California");
+        ArrayList<QuakeEntry> listByPhrase = filterByPhrase(list, "any", "Creek");
         for (QuakeEntry qe : listByPhrase)
             System.out.println(qe);
         System.out.println("Found " + listByPhrase.size() + " quakes that match the criteria");
@@ -92,12 +94,12 @@ public class EarthQuakeClient {
     public void quakesOfDepth() {
         EarthQuakeParser parser = new EarthQuakeParser();
         //String source = "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.atom";
-        //String source = "data/nov20quakedata.atom";
-        String source = "data/nov20quakedatasmall.atom";
+        String source = "data/nov20quakedata.atom";
+        //String source = "data/nov20quakedatasmall.atom";
         ArrayList<QuakeEntry> list = parser.read(source);
         System.out.println("read data for " + list.size() + " quakes");
         int quakeCounter = 0;
-        ArrayList<QuakeEntry> listByDepth = filterByDepth(list, -10000, -5000);
+        ArrayList<QuakeEntry> listByDepth = filterByDepth(list, -10000, -8000);
         for (QuakeEntry qe : listByDepth)
             System.out.println(qe);
         System.out.println("Found " + listByDepth.size() + " quakes that match the criteria");
