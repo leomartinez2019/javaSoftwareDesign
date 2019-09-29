@@ -83,9 +83,9 @@ public class EarthQuakeClient {
         //String source = "data/nov20quakedatasmall.atom";
         ArrayList<QuakeEntry> list = parser.read(source);
         System.out.println("read data for " + list.size() + " quakes");
-        //ArrayList<QuakeEntry> listByPhrase = filterByPhrase(list, "start", "Explosion");
+        ArrayList<QuakeEntry> listByPhrase = filterByPhrase(list, "any", "Can");
         //ArrayList<QuakeEntry> listByPhrase = filterByPhrase(list, "end", "California");
-        ArrayList<QuakeEntry> listByPhrase = filterByPhrase(list, "any", "Creek");
+        //ArrayList<QuakeEntry> listByPhrase = filterByPhrase(list, "any", "Creek");
         for (QuakeEntry qe : listByPhrase)
             System.out.println(qe);
         System.out.println("Found " + listByPhrase.size() + " quakes that match the criteria");
@@ -99,7 +99,7 @@ public class EarthQuakeClient {
         ArrayList<QuakeEntry> list = parser.read(source);
         System.out.println("read data for " + list.size() + " quakes");
         int quakeCounter = 0;
-        ArrayList<QuakeEntry> listByDepth = filterByDepth(list, -10000, -8000);
+        ArrayList<QuakeEntry> listByDepth = filterByDepth(list, -4000.0, -2000.0);
         for (QuakeEntry qe : listByDepth)
             System.out.println(qe);
         System.out.println("Found " + listByDepth.size() + " quakes that match the criteria");

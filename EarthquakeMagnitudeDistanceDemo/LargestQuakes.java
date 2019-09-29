@@ -8,9 +8,10 @@ public class LargestQuakes {
     String source = "data/nov20quakedata.atom";
     ArrayList<QuakeEntry> list = parser.read(source);
     System.out.println("read data for " + list.size() + " quakes");
-    ArrayList<QuakeEntry> largest = getLargest(list, 5);
+    ArrayList<QuakeEntry> largest = getLargest(list, 50);
     for (QuakeEntry qe : largest)
       System.out.println(qe);
+    System.out.println("Read " + largest.size() + " quakes");
   }
 
   public int indexOfLargest(ArrayList<QuakeEntry> data) {
